@@ -3,7 +3,13 @@ import HeaderMenuItem from "./HeaderMenuItem";
 
 export default props => {
     const { items } = props;
+    console.log(items)
     return <ul className="navbar-nav mr-auto">
-        {items.map((item, idx) => <HeaderMenuItem key={idx} title={item} />)}
+        {items.map((item, idx) => <HeaderMenuItem
+            key={idx}
+            title={item.category}
+            customColor={item.customColor ? item.customColor : undefined}/>
+            )
+        }
     </ul>
 }

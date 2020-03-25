@@ -7,10 +7,10 @@ import 'bootstrap/dist/js/bootstrap.bundle.min';
 function App() {
 
     const HeaderMenuItems = [
-        'Home',
-        'Sales',
-        'Favorites',
-        'About'
+        {category: 'Home', customColor: null },
+        {category: 'Population', customColor: null },
+        {category: 'Economies', customColor: null },
+        {category: 'Coronavirus', customColor: 'red' }
     ];
     const FooterMenuItems = [
 

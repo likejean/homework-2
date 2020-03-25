@@ -10,3 +10,10 @@ span.navbar-toggler-icon {
 a.nav-link, button.navbar-toggler {
     margin: 0.45rem;
 }
+
+
+.logo {
+    width: 100px;
+    margin: 1.2rem;
+}
+
