@@ -1,0 +1,25 @@
+*****LINK to Instrustions How to Deploy React App on Git Hub Pages*****
+https://github.com/gitname/react-gh-pages/blob/master/README.md
+
+STEP 1: Create React App locally
+STEP 2: Create a NEW repository on GitHub.com
+STET 3: Leave the GitHub 'code' page for now...
+STEP 4: >>>>>>npm isntall gh-pages
+STEP 5: Open package.json...
+
+STEP 6: Insert the "homepage" property...
+"homepage": "http://username.github.io/projectname",
+In my case, username: likejean, projectname: seattleweather
+
+STEP 7: Insert the following commands into "scripts"
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+STEP 8: Close package.json...
+STEP 9:  >>>>>>git init
+STEP 10: >>>>>>git remote add origin git@github.com:likejean/seattleweather.git
+STEP 11: >>>>>>git add .
+STEP 12: >>>>>>git commit -m "comment"
+STEP 13: >>>>>>npm run deploy
+STEP 14: >>>>>>git push -u origin master
+STEP 15: On GitHub, navigate to the project
+STEP 16: Click the link to a published project
