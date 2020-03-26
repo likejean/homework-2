@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import Header from './components/header';
 import Main from "./components/content";
+import Footer from './components/footer';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 
@@ -20,6 +21,7 @@ function App() {
         <div className="App">
             <Header items={HeaderMenuItems}/>
             <Main/>
+            <Footer/>
         </div>
     );
 }

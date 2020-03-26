@@ -1,3 +1,4 @@
+
 a.navbar-brand, li.nav-item {
     font-size: 45px;
 }
@@ -32,5 +33,18 @@ d-flex {
     flex-direction: column;
     justify-content: center;
     margin-top: 150px;
+    min-height: 100%;
+    background-image: url('./assets/covid19background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
 }
+
+.footer {
+    height: 150px;
+    margin-top: 200px;
+    text-align: center;
+    background-color: #3589ff;
+    color: #d1d5ff;
+}
+
 
