@@ -17,3 +17,20 @@ a.nav-link, button.navbar-toggler {
     margin: 1.2rem;
 }
 
+span.badge {
+    font-size: 45px;
+    width: 70%;
+    margin: 1% 15% 1% 15%;
+}
+
+d-flex {
+    margin: 250px;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 150px;
+}
+

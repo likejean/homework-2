@@ -2,11 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c5307d69-e6a7-4bfd-bac2-86d701e90f50" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/content/Badge.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/content/LoaderSpinner.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/content/Main.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/content/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/footer/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/header/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/Header.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/header/HeaderMenu.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/HeaderMenu.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/content/Content.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/content/Content.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/header/HeaderMenuItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/HeaderMenuItem.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -72,7 +78,7 @@
       <option name="presentableId" value="Default" />
       <updated>1585125086445</updated>
       <workItem from="1585125088248" duration="7810000" />
-      <workItem from="1585158574731" duration="2675000" />
+      <workItem from="1585158574731" duration="12919000" />
     </task>
     <servers />
   </component>
