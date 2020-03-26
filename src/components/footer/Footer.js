@@ -1,6 +1,13 @@
 import React from 'react';
-export default () => (
+import Source from "./Source";
+export default props => (
     <footer className="footer">
-        <p>Some footer nonsense!</p>
+        <h2>Source Links</h2>
+        <ul>
+            {props.items.map((source, idx) => <li className='footer-link' key={idx} ><Source source={source} /></li>)}
+        </ul>
+        <div className='copyrights'>
+            &copy; {new Date().getFullYear()} Copyright: <a href="https://www.mdbootstrap.com"> PASV </a>
+        </div>
     </footer>
 );

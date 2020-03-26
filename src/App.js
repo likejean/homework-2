@@ -15,13 +15,15 @@ function App() {
         {category: 'Coronavirus', customColor: 'red' }
     ];
     const FooterMenuItems = [
-
+        {name: 'Centers for Disease Control and Prevention', url: 'https://www.cdc.gov/coronavirus/2019-nCoV/index.html'},
+        {name: 'Worldometer', url: 'https://www.worldometers.info/coronavirus/'},
+        {name: 'WHO', url: 'https://www.who.int/emergencies/diseases/novel-coronavirus-2019'}
     ];
     return (
         <div className="App">
             <Header items={HeaderMenuItems}/>
             <Main/>
-            <Footer/>
+            <Footer items={FooterMenuItems}/>
         </div>
     );
 }

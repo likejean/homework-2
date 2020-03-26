@@ -4,7 +4,6 @@ import Content from "./Content";
 
 export default () => {
     const [stats, setStats] = useState(null);
-
     useEffect(() => {
         ///!!!TO TRANSFORM BYTES INTO CHARACTERS... https://flaviocopes.com/stream-api/
         const decoder = new TextDecoder('utf-8');
