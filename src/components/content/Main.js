@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import LoaderSpinner from "./LoaderSpinner";
 import Content from "./Content";
+import SearchBar from "./SearchBar";
 
 export default () => {
     const [stats, setStats] = useState(null);
@@ -22,6 +23,7 @@ export default () => {
                 .then(({value, done}) => {
                     jsonData = JSON.parse(decoder.decode(value));
                     setStats(jsonData);
+                    console.log('TOTALS', stats)
                 })
             })
         .catch(err => {
@@ -32,6 +34,7 @@ export default () => {
     return (
         <div className='main-container'>
             {stats === null ? <LoaderSpinner/> : <Content data={stats}/>}
+            <SearchBar/>
         </div>
     )
 }
