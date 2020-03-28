@@ -2,17 +2,20 @@ import React, {useEffect, useState } from 'react';
 import SubmitButton from "./SubmitButton";
 import NameInput from "./NameInput";
 
-export default () => {
-    const [searchKeyWord, setKeyWordSearch] = useState("");
-    const [nameQuery, setNameQuery] = useState('');
+export default props => {
     const [stats, setStats] = useState(null);
+    const [searchKeyWord, setKeyWordSearch] = useState("");
+    const [nameQuery, setNameQuery] = useState("");
+
+
+
+    const { setCountryStats } = props;
 
     useEffect(() => {
         ///!!!TO TRANSFORM BYTES INTO CHARACTERS... https://flaviocopes.com/stream-api/
         const decoder = new TextDecoder('utf-8');
         let jsonData;
         const getData = () => {
-
             fetch(`https://coronavirus-monitor.p.rapidapi.com/coronavirus/cases_by_particular_country.php?country=${nameQuery}`, {
                 "method": "GET",
                 "headers": {
@@ -22,33 +25,32 @@ export default () => {
             })
             .then(response => {
                 response.body
-                    .getReader()
-                    .read()
-                    .then(({value, done}) => {
-                        jsonData = JSON.parse(decoder.decode(value));
-                        setStats(jsonData);
-                    })
+                .getReader()
+                .read()
+                .then(({value, done}) => {
+                    jsonData = JSON.parse(decoder.decode(value));
+                    setStats(jsonData);
+                    console.log(jsonData)
+                    setCountryStats(jsonData);
+                })
             })
             .catch(err => {
                 console.log(err);
             });
         }
-        nameQuery.length > 0 ? getData() : console.log("Empty...")
+        getData();
     },[nameQuery]);
 
 
     const inputChange = e => setKeyWordSearch(e.target.value);
     const getSearch = e => {
-        e.preventDefault();
+        e.preventDefault()
         setNameQuery(searchKeyWord);
     }
 
-    setTimeout(() => console.log(stats),5000);
-
-    console.log(searchKeyWord);
-    console.log(nameQuery);
 
     return <div className="container h-100">
+
         <NameInput search={searchKeyWord} change={inputChange}/>
         <SubmitButton submit={getSearch}/>
     </div>

@@ -4,8 +4,10 @@ import Content from "./Content";
 import SearchBar from "./SearchBar";
 import PlotChart from "./PlotChart";
 
+
 export default () => {
     const [totalStats, setTotalStats] = useState(null);
+    const [countryStats, setCountryStats] = useState(null);
     useEffect(() => {
         ///!!!TO TRANSFORM BYTES INTO CHARACTERS... https://flaviocopes.com/stream-api/
         const decoder = new TextDecoder('utf-8');
@@ -31,14 +33,18 @@ export default () => {
         });
     },[]);
 
+    const plot = data => <React.Fragment>
+        <p>{data.country}</p>
+        <PlotChart data={data}/>
+    </React.Fragment>
+    console.log("countryStats",countryStats)
     return (
         <React.Fragment>
             <div className='main-container'>
-                {totalStats === null ? <LoaderSpinner/> : <Content data={totalStats}/>}
-                <SearchBar/>
-
+                {totalStats === null ? <LoaderSpinner type={"BallTriangle"}/> : <Content data={totalStats}/>}
+                <SearchBar setCountryStats={setCountryStats}/>
             </div>
-            <PlotChart style={{marginTop: 50}}/>
+            <h1>{countryStats === null || countryStats.error ? <p>Search Country by Name</p> : plot(countryStats)}</h1>
         </React.Fragment>
     )
 }

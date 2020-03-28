@@ -3,7 +3,6 @@ import Badge from "./Badge";
 import Notification from "./Notification";
 
 export default props => {
-    console.log(props.data);
     const {data: { total_cases, total_deaths, total_recovered, statistic_taken_at }} = props;
     const info = [
         {title: 'Coronavirus Cases', quantity: total_cases, background: 'danger'},

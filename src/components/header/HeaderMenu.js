@@ -3,7 +3,6 @@ import HeaderMenuItem from "./HeaderMenuItem";
 
 export default props => {
     const { items } = props;
-    console.log(items)
     return <ul className="navbar-nav mr-auto">
         {items.map((item, idx) => <HeaderMenuItem
             key={idx}

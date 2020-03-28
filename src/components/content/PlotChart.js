@@ -26,7 +26,9 @@ function generateData() {
 class PlotChart extends Component {
     constructor(props) {
         super(props);
+        console.log('DATA',props);
         this.state = {
+            data: props.data,
             dataProvider: generateData(),
             timer: null
         };
