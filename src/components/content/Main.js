@@ -2,9 +2,10 @@ import React, {useEffect, useState} from 'react';
 import LoaderSpinner from "./LoaderSpinner";
 import Content from "./Content";
 import SearchBar from "./SearchBar";
+import PlotChart from "./PlotChart";
 
 export default () => {
-    const [stats, setStats] = useState(null);
+    const [totalStats, setTotalStats] = useState(null);
     useEffect(() => {
         ///!!!TO TRANSFORM BYTES INTO CHARACTERS... https://flaviocopes.com/stream-api/
         const decoder = new TextDecoder('utf-8');
@@ -22,8 +23,7 @@ export default () => {
                 .read()
                 .then(({value, done}) => {
                     jsonData = JSON.parse(decoder.decode(value));
-                    setStats(jsonData);
-                    console.log('TOTALS', stats)
+                    setTotalStats(jsonData);
                 })
             })
         .catch(err => {
@@ -32,9 +32,13 @@ export default () => {
     },[]);
 
     return (
-        <div className='main-container'>
-            {stats === null ? <LoaderSpinner/> : <Content data={stats}/>}
-            <SearchBar/>
-        </div>
+        <React.Fragment>
+            <div className='main-container'>
+                {totalStats === null ? <LoaderSpinner/> : <Content data={totalStats}/>}
+                <SearchBar/>
+
+            </div>
+            <PlotChart style={{marginTop: 50}}/>
+        </React.Fragment>
     )
 }

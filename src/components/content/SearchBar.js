@@ -1,4 +1,6 @@
 import React, {useEffect, useState } from 'react';
+import SubmitButton from "./SubmitButton";
+import NameInput from "./NameInput";
 
 export default () => {
     const [searchKeyWord, setKeyWordSearch] = useState("");
@@ -25,7 +27,6 @@ export default () => {
                     .then(({value, done}) => {
                         jsonData = JSON.parse(decoder.decode(value));
                         setStats(jsonData);
-                        console.log('COUNTRY',stats);
                     })
             })
             .catch(err => {
@@ -37,37 +38,18 @@ export default () => {
 
 
     const inputChange = e => setKeyWordSearch(e.target.value);
-    const getSearchAll = e => {
+    const getSearch = e => {
         e.preventDefault();
         setNameQuery(searchKeyWord);
     }
-    setTimeout(()=>console.log(stats),5000)
+
+    setTimeout(() => console.log(stats),5000);
 
     console.log(searchKeyWord);
     console.log(nameQuery);
 
     return <div className="container h-100">
-        <div className="d-flex justify-content-center h-100">
-            <div className="searchbar">
-                <input
-                    className="search_input"
-                    type="text"
-                    placeholder="Search By Country..."
-                    name="countryName"
-                    value={searchKeyWord}
-                    onChange={inputChange}
-                />
-                <a href="#" className="search_icon"><i className="fas fa-search"></i></a>
-            </div>
-        </div>
-        <div className="container">
-            <button type="submit"
-                className="pinkBg btns" target="_blank" onClick={getSearchAll}
-            >
-                <span className="ripple pinkBg"></span>
-                <span className="ripple pinkBg"></span>
-                <span className="ripple pinkBg"></span>
-            </button>
-        </div>
+        <NameInput search={searchKeyWord} change={inputChange}/>
+        <SubmitButton submit={getSearch}/>
     </div>
 }
