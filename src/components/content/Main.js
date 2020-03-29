@@ -34,10 +34,10 @@ export default () => {
     },[]);
 
     const Plot = data => <React.Fragment>
+        <p className="alert alert-primary">DEATHS per DATE</p>
         <p className="alert alert-primary">{data.country}</p>
         <PlotChart data={data}/>
     </React.Fragment>
-    console.log("countryStats",countryStats)
     return (
         <React.Fragment>
             <div className='main-container'>

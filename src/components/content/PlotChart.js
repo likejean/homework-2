@@ -4,19 +4,13 @@ import AmCharts from "@amcharts/amcharts3-react";
 
 
 function generateData(stats) {
-    //const firstDate = new Date();
-
     const dataProvider = [];
-
-    console.log('DATA',stats);
     for (let i = 0; i < stats.length; i++){
-        console.log(new Date(stats[i].record_date));
         dataProvider.push({
             date: new Date(stats[i].record_date),
             value: stats[i].total_deaths
         });
     }
-
     return dataProvider;
 }
 
@@ -39,7 +33,7 @@ class PlotChart extends Component {
                 this.setState({
                     dataProvider: generateData(this.props.data.stat_by_country)
                 });
-            }, 30000)
+            }, 10000)
         });
     }
 

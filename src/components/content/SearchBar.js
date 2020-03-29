@@ -30,7 +30,6 @@ export default props => {
                 .then(({value, done}) => {
                     jsonData = JSON.parse(decoder.decode(value));
                     setStats(jsonData);
-                    console.log(jsonData)
                     setCountryStats(jsonData);
                 })
             })
