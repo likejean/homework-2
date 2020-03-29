@@ -33,8 +33,8 @@ export default () => {
         });
     },[]);
 
-    const plot = data => <React.Fragment>
-        <p>{data.country}</p>
+    const Plot = data => <React.Fragment>
+        <p className="alert alert-primary">{data.country}</p>
         <PlotChart data={data}/>
     </React.Fragment>
     console.log("countryStats",countryStats)
@@ -44,7 +44,7 @@ export default () => {
                 {totalStats === null ? <LoaderSpinner type={"BallTriangle"}/> : <Content data={totalStats}/>}
                 <SearchBar setCountryStats={setCountryStats}/>
             </div>
-            <h1>{countryStats === null || countryStats.error ? <p>Search Country by Name</p> : plot(countryStats)}</h1>
+            <h1>{countryStats === null || countryStats.error ? <p className="alert alert-primary">Search Country by Name</p> : Plot(countryStats)}</h1>
         </React.Fragment>
     )
 }

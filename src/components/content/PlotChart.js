@@ -2,19 +2,18 @@ import React, {Component} from 'react';
 import AmCharts from "@amcharts/amcharts3-react";
 // Generate random data
 
-function generateData() {
-    const firstDate = new Date();
+
+function generateData(stats) {
+    //const firstDate = new Date();
 
     const dataProvider = [];
 
-    for (let i = 0; i < 100; ++i) {
-        const date = new Date(firstDate.getTime());
-
-        date.setDate(i);
-
+    console.log('DATA',stats);
+    for (let i = 0; i < stats.length; i++){
+        console.log(new Date(stats[i].record_date));
         dataProvider.push({
-            date: date,
-            value: Math.floor(Math.random() * 100)
+            date: new Date(stats[i].record_date),
+            value: stats[i].total_deaths
         });
     }
 
@@ -26,10 +25,9 @@ function generateData() {
 class PlotChart extends Component {
     constructor(props) {
         super(props);
-        console.log('DATA',props);
+
         this.state = {
-            data: props.data,
-            dataProvider: generateData(),
+            dataProvider: generateData(props.data.stat_by_country),
             timer: null
         };
     }
@@ -39,9 +37,9 @@ class PlotChart extends Component {
             // Update the chart dataProvider every 3 seconds
             timer: setInterval(() => {
                 this.setState({
-                    dataProvider: generateData()
+                    dataProvider: generateData(this.props.data.stat_by_country)
                 });
-            }, 3000)
+            }, 30000)
         });
     }
 
